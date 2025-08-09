@@ -113,6 +113,20 @@ const App = () => {
     }
   }
 
+  //Calculate Total Strength
+  const getTotalStrength = (total, fighter) => (
+    total + fighter.strength
+  )
+  const totalStrength = team.reduce(getTotalStrength, 0)
+
+
+  //Calculate Total Agility
+  const getTotalAgility = (total, fighter) => (
+    total + fighter.agility
+  )
+
+
+  const totalAgility = team.reduce(getTotalAgility, 0)
 
   return (
     <>
@@ -152,9 +166,16 @@ const App = () => {
               ))}
             </ul>
           )
-
         }
+
+        <div>
+          <p>Total Srength: {totalStrength}</p>
+          <p>Total Agility: {totalAgility}</p>
+        </div>
+
       </section>
+
+
 
     </>
   )
