@@ -4,7 +4,7 @@ import './App.css'
 const App = () => {
   const [team, setTeam] = useState([])
   const [money, setMoney] = useState(100)
-  const [zombieFighters, SetzombieFighters] = useState(
+  const [zombieFighters, setZombieFighters] = useState(
     [
       {
         id: 1,
@@ -96,7 +96,7 @@ const App = () => {
 
 
       //Removed fighter from zombieFighters array
-      SetzombieFighters(zombieFighters.filter(fighters => fighters.id !== fighter.id))
+      setZombieFighters(zombieFighters.filter(fighters => fighters.id !== fighter.id))
 
 
       //Another way to write it 
@@ -119,16 +119,16 @@ const App = () => {
     <>
       <h2>Money:{money}</h2>
       <ul>
-        {zombieFighters.map((fighter) => {
+        {zombieFighters.map((fighter) => (
           <li key={fighter.id}>
-            <img src={fighter.img} />
+            <img src={fighter.img} alt={fighter.name} />
             <p>Name:{fighter.name}</p>
             <p>Price:{fighter.price}</p>
             <p>Strength:{fighter.strength}</p>
             <p>Agility:{fighter.agility}</p>
             <button onClick={() => handleAddFighter(fighter)}>Add</button>
           </li>
-        })}
+        ))}
       </ul>
     </>
   )
