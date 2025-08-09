@@ -100,8 +100,8 @@ const App = () => {
 
 
       //Another way to write it 
-        // const newArray = zombieFighters.filter(fighters => fighters.id !== fighter.id)
-        // SetzombieFighters(newArray)
+      // const newArray = zombieFighters.filter(fighters => fighters.id !== fighter.id)
+      // SetzombieFighters(newArray)
 
 
       //Subtract fighter's price from the money
@@ -114,22 +114,48 @@ const App = () => {
   }
 
 
-
   return (
     <>
       <h2>Money:{money}</h2>
-      <ul>
-        {zombieFighters.map((fighter) => (
-          <li key={fighter.id}>
-            <img src={fighter.img} alt={fighter.name} />
-            <p>Name:{fighter.name}</p>
-            <p>Price:{fighter.price}</p>
-            <p>Strength:{fighter.strength}</p>
-            <p>Agility:{fighter.agility}</p>
-            <button onClick={() => handleAddFighter(fighter)}>Add</button>
-          </li>
-        ))}
-      </ul>
+
+      <section>
+        <ul>
+          {zombieFighters.map((fighter) => (
+            <li key={fighter.id}>
+              <img src={fighter.img} alt={fighter.name} />
+              <p>Name:{fighter.name}</p>
+              <p>Price:{fighter.price}</p>
+              <p>Strength:{fighter.strength}</p>
+              <p>Agility:{fighter.agility}</p>
+              <button onClick={() => handleAddFighter(fighter)}>Add</button>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+
+
+      <section>
+        <h3>Your Team</h3>
+        {team.length === 0 ? (<p>Pick some team members!</p>)
+
+          : (
+            <ul>
+              {team.map((fighter) => (
+                <li key={fighter.id}>
+                  <img src={fighter.img} alt={fighter.name} />
+                  <p>Name:{fighter.name}</p>
+                  <p>Price:{fighter.price}</p>
+                  <p>Strength:{fighter.strength}</p>
+                  <p>Agility:{fighter.agility}</p>
+                </li>
+              ))}
+            </ul>
+          )
+
+        }
+      </section>
+
     </>
   )
 }
