@@ -91,11 +91,8 @@ const App = () => {
   const handleAddFighter = (fighter) => {
     if (fighter.price < money) {
 
-      //Add fighter to team array
       setTeam([...team, fighter])
 
-
-      //Removed fighter from zombieFighters array
       setZombieFighters(zombieFighters.filter(fighters => fighters.id !== fighter.id))
 
 
@@ -103,8 +100,6 @@ const App = () => {
       // const newArray = zombieFighters.filter(fighters => fighters.id !== fighter.id)
       // SetzombieFighters(newArray)
 
-
-      //Subtract fighter's price from the money
       setMoney(money - fighter.price)
 
     } else {
@@ -124,9 +119,16 @@ const App = () => {
   const getTotalAgility = (total, fighter) => (
     total + fighter.agility
   )
-
-
   const totalAgility = team.reduce(getTotalAgility, 0)
+
+
+
+  const handleRemoveFighter = (fighter) => {
+    setTeam(team.filter(fighters => fighters.id !== fighter.id))
+    setZombieFighters([...zombieFighters, fighter])
+    setMoney(money + fighter.price)
+
+  }
 
   return (
     <>
@@ -162,6 +164,7 @@ const App = () => {
                   <p>Price:{fighter.price}</p>
                   <p>Strength:{fighter.strength}</p>
                   <p>Agility:{fighter.agility}</p>
+                  <button onClick={() => handleRemoveFighter(fighter)}>Remove</button>
                 </li>
               ))}
             </ul>
@@ -174,7 +177,6 @@ const App = () => {
         </div>
 
       </section>
-
 
 
     </>
