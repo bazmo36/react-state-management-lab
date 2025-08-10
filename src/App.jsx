@@ -88,6 +88,8 @@ const App = () => {
   },
 ])
 
+const [errorMessage, setErrorMessage] = useState('')
+
 
   const handleAddFighter = (fighter) => {
     if (fighter.price < money) {
@@ -103,8 +105,10 @@ const App = () => {
 
       setMoney(money - fighter.price)
 
+      setErrorMessage('')
+
     } else {
-      console.log('"Not enough money"')
+      setErrorMessage(`Not enough money to recruit ${fighter.name}.`)
       return
     }
   }
@@ -139,6 +143,7 @@ const App = () => {
        
        <div className="money-container">
        <h2 >Money:🥮{money}</h2>
+       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
        </div>
 
       <section>
