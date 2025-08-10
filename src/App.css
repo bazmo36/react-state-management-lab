@@ -1,16 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
 #root {
   margin: 16px;
+  font-family: "Silkscreen", sans-serif;
+  background-color: #0d0d0d;
+  color:rgb(245, 198, 104);
+  padding: 20px;
+  text-align: center;
 }
 
+/* Game Title */
+h1 {
+  font-size: 2.5rem;
+  color: rgb(245, 200, 104);
+  text-shadow: 0 0 8px gold, 0 0 8px rgba(255, 215, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+/* .money-container{
+ display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}  */
+
+/* Money Display */
+h2 {
+  background: rgba(255, 215, 0, 0.1);
+  border: 2px solid gold;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  margin-left: 20px;
+}
+
+
+
+/* Fighters banner */
+.fighters {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.2);
+
+}
+
+/* Fighter's name */
+.fighter-name{
+  color: rgb(244, 212, 115);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Fighter list layout */
 ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  gap: 10px;
 }
 
+/* Fighter cards */
 li {
   list-style: none;
-  margin: 8px;
-  padding: 8px;
-  border: whitesmoke 3px solid;
-  border-radius: 8px;
+  margin: 10px;
+  padding: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  border-radius: 10px;
+  background-color: rgba(20, 20, 20, 0.85);
+  transition: transform 0.2s, box-shadow 0.3s, border-color 0.3s;
+  text-align: center;
+  width: 180px;
+}
+
+li:hover {
+  transform: translateY(-5px);
+  border-color: gold;
+  box-shadow: 0 0 15px gold;
+}
+
+/* Fighter images */
+.zomfighter,
+li img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* Game buttons */
+button {
+  font-family: "Silkscreen", sans-serif;
+  background-color: transparent;
+  border: 2px solid gold;
+  color: gold;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: gold;
+  color: black;
+  box-shadow: 0 0 10px gold;
+}
+
+/* Section headings */
+h3 {
+  margin-top: 30px;
+  border-bottom: 2px solid gold;
+  padding-bottom: 6px;
+  text-shadow: 0 0 5px gold;
+}
+
+/* Team Stats */
+div p {
+  margin: 4px 0;
+  font-size: 15px;
 }

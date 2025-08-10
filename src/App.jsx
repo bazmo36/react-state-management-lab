@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './App.css'
 
+
 const App = () => {
   const [team, setTeam] = useState([])
   const [money, setMoney] = useState(100)
@@ -132,15 +133,21 @@ const App = () => {
 
   return (
     <>
-      <h2>Money:{money}</h2>
+      <h1 className="game-title">⚔ Zombie Fighters ⚔</h1>
+
+      <img className="fighters" src="/fighters/fighters.png" alt="Zombie Fihters" />
+       
+       <div className="money-container">
+       <h2 >Money:🥮{money}</h2>
+       </div>
 
       <section>
         <ul>
           {zombieFighters.map((fighter) => (
             <li key={fighter.id}>
-              <img src={fighter.img} alt={fighter.name} />
-              <p>Name:{fighter.name}</p>
-              <p>Price:{fighter.price}</p>
+              <img className="zomfighter" src={fighter.img} alt={fighter.name} />
+              <p className="fighter-name">{fighter.name}</p>
+              <p>Price:🥮{fighter.price}</p>
               <p>Strength:{fighter.strength}</p>
               <p>Agility:{fighter.agility}</p>
               <button onClick={() => handleAddFighter(fighter)}>Add</button>
